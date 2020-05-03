@@ -32,6 +32,32 @@ public final class ApplicationTest {
         applicationThread = new Thread(taskList);
     }
 
+    private void execute(String command) throws IOException {
+        read(PROMPT);
+        write(command);
+    }
+
+    private void read(String expectedOutput) throws IOException {
+        int length = expectedOutput.length();
+        char[] buffer = new char[length];
+        outReader.read(buffer, 0, length);
+        assertThat(String.valueOf(buffer), is(expectedOutput));
+    }
+
+    private void readLines(String... expectedOutput) throws IOException {
+        for (String line : expectedOutput) {
+            read(line + lineSeparator());
+        }
+    }
+
+    private void write(String input) {
+        inWriter.println(input);
+    }
+
+    private boolean stillRunning() {
+        return applicationThread != null && applicationThread.isAlive();
+    }
+
     @Before
     public void
     start_the_application() {
@@ -253,29 +279,5 @@ public final class ApplicationTest {
         execute("quit");
     }
 
-    private void execute(String command) throws IOException {
-        read(PROMPT);
-        write(command);
-    }
 
-    private void read(String expectedOutput) throws IOException {
-        int length = expectedOutput.length();
-        char[] buffer = new char[length];
-        outReader.read(buffer, 0, length);
-        assertThat(String.valueOf(buffer), is(expectedOutput));
-    }
-
-    private void readLines(String... expectedOutput) throws IOException {
-        for (String line : expectedOutput) {
-            read(line + lineSeparator());
-        }
-    }
-
-    private void write(String input) {
-        inWriter.println(input);
-    }
-
-    private boolean stillRunning() {
-        return applicationThread != null && applicationThread.isAlive();
-    }
 }
