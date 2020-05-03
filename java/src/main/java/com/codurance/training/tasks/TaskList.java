@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -15,9 +16,7 @@ public final class TaskList implements Runnable {
     private static final String QUIT = "quit";
 
     private final Map<String, Project> tasks = new LinkedHashMap<>();
-    Console console;
-
-    private long lastId = 0;
+    private final Console console;
 
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -43,33 +42,54 @@ public final class TaskList implements Runnable {
                 break;
             }
 
-            switch (commandName) {
-                case "show":
-                    new ActionShow().execute(ctx);
-                    break;
-                case "add":
-                    String[] subcommandRest = commandRest[1].split(" ", 2);
-                    String subcommand = subcommandRest[0];
+            try {
+                switch (commandName) {
+                    case "show":
+                        new ActionShow().execute(ctx);
+                        break;
+                    case "add":
+                        String[] subcommandRest = commandRest[1].split(" ", 2);
+                        String subcommand = subcommandRest[0];
 
-                    if (subcommand.equals("project")) {
-                        new ActionAddProject(subcommandRest[1]).execute(ctx);
-                    } else if (subcommand.equals("task")) {
-                        String[] projectTask = subcommandRest[1].split(" ", 2);
-                        new ActionAddTask(projectTask[0], projectTask[1]).execute(ctx);
-                    }
-                    break;
-                case "check":
-                    new ActionCheck(Long.parseLong(commandRest[1])).execute(ctx);
-                    break;
-                case "uncheck":
-                    new ActionUncheck(Long.parseLong(commandRest[1])).execute(ctx);
-                    break;
-                case "help":
-                    new ActionHelp().execute(ctx);
-                    break;
-                default:
-                    error(command);
-                    break;
+                        if (subcommand.equals("project")) {
+                            new ActionAddProject(subcommandRest[1]).execute(ctx);
+                        } else if (subcommand.equals("task")) {
+                            String[] projectTask = subcommandRest[1].split(" ", 2);
+                            new ActionAddTask(projectTask[0], projectTask[1]).execute(ctx);
+                        }
+                        break;
+                    case "check":
+                        new ActionCheck(Long.parseLong(commandRest[1])).execute(ctx);
+                        break;
+                    case "uncheck":
+                        new ActionUncheck(Long.parseLong(commandRest[1])).execute(ctx);
+                        break;
+                    case "help":
+                        new ActionHelp().execute(ctx);
+                        break;
+                    case "delete":
+                        String taskId = commandRest[1].split(" ", 2)[0];
+                        new ActionDeleteTask(Long.parseLong(taskId)).execute(ctx);
+                        break;
+                    case "today":
+                        new ActionToday().execute(ctx);
+                        break;
+                    case "deadline":
+                        String[] subcommands = commandRest[1].split(" ", 2);
+                        long deadlineTaskId = Long.parseLong(subcommands[0]);
+                        LocalDate date = LocalDate.parse(subcommands[1]);
+                        new ActionSetDeadline(deadlineTaskId, date).execute(ctx);
+                        break;
+                    case "viewby":
+                        new ActionView().execute(ctx);
+                        break;
+                    default:
+                        error(command);
+                        break;
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+                ctx.getConsole().print("Unknown command");
             }
         }
     }
