@@ -78,8 +78,4 @@ public final class TaskList implements Runnable {
         this.console.printf("I don't know what the command \"%s\" is.", command);
         this.console.print("");
     }
-
-    private long nextId() {
-        return ++lastId;
-    }
 }

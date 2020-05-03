@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15056dbd-ea19-497b-91a2-71c52c6bf56d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/CommandContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionAddProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionAddProject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionAddTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionAddTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionCheckToggle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionCheckToggle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionDeadline.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionDelete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionHelp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionShow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionUncheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionUncheck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588493624839</updated>
       <workItem from="1588493628068" duration="5778000" />
-      <workItem from="1588502266619" duration="2820000" />
+      <workItem from="1588502266619" duration="2896000" />
     </task>
     <servers />
   </component>

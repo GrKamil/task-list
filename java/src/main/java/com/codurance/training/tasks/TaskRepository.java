@@ -17,11 +17,6 @@ public class TaskRepository {
     }
 
     public long getNextId() {
-        this.lastId = this.getLastId() + 1;
-        return this.lastId;
-    }
-
-    public long getLastId() {
-        return this.lastId;
+        return ++this.lastId;
     }
 }
