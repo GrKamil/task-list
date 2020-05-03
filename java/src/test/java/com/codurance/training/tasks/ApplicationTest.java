@@ -42,7 +42,7 @@ public final class ApplicationTest {
             return;
         }
 
-//        Thread.sleep(5000);
+        Thread.sleep(1000);
         if (!stillRunning()) {
             return;
         }
@@ -67,12 +67,12 @@ public final class ApplicationTest {
                 ""
         );
 
-        execute("delete 3");
+        execute("delete 4");
 
         execute("show");
         readLines(
                 "secrets",
-                "    [ ] 4: Destroy all humans.",
+                "    [ ] 3: Eat more donuts.",
                 ""
         );
         execute("quit");
