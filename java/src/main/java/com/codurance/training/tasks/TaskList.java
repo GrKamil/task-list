@@ -1,5 +1,10 @@
 package com.codurance.training.tasks;
 
+import com.codurance.training.tasks.actions.ActionCheck;
+import com.codurance.training.tasks.actions.ActionHelp;
+import com.codurance.training.tasks.actions.ActionShow;
+import com.codurance.training.tasks.actions.ActionUncheck;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,35 +18,30 @@ public final class TaskList implements Runnable {
     private static final String QUIT = "quit";
 
     private final Map<String, List<Task>> tasks = new LinkedHashMap<>();
-    private final BufferedReader in;
-    private final PrintWriter out;
+    Console console;
 
     private long lastId = 0;
 
     public static void main(String[] args) throws Exception {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter out = new PrintWriter(System.out);
+
         new TaskList(in, out).run();
     }
 
     public TaskList(BufferedReader reader, PrintWriter writer) {
-        this.in = reader;
-        this.out = writer;
+        this.console = new Console(reader, writer);
     }
 
     public void run() {
         while (true) {
-            out.print("> ");
-            out.flush();
-            String command;
-            try {
-                command = in.readLine();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            this.console.printCommandStart();
+            String command = this.console.readCommand();
+
             if (command.equals(QUIT)) {
                 break;
             }
+
             execute(command);
         }
     }
@@ -51,33 +51,23 @@ public final class TaskList implements Runnable {
         String command = commandRest[0];
         switch (command) {
             case "show":
-                show();
+                new ActionShow(this.tasks, this.console).execute();
                 break;
             case "add":
                 add(commandRest[1]);
                 break;
             case "check":
-                check(commandRest[1]);
+                new ActionCheck(this.tasks, this.console, commandRest[1]).execute();
                 break;
             case "uncheck":
-                uncheck(commandRest[1]);
+                new ActionUncheck(this.tasks, this.console, commandRest[1]).execute();
                 break;
             case "help":
-                help();
+                new ActionHelp(this.console).execute();
                 break;
             default:
                 error(command);
                 break;
-        }
-    }
-
-    private void show() {
-        for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
-            out.println(project.getKey());
-            for (Task task : project.getValue()) {
-                out.printf("    [%c] %d: %s%n", (task.isDone() ? 'x' : ' '), task.getId(), task.getDescription());
-            }
-            out.println();
         }
     }
 
@@ -99,48 +89,16 @@ public final class TaskList implements Runnable {
     private void addTask(String project, String description) {
         List<Task> projectTasks = tasks.get(project);
         if (projectTasks == null) {
-            out.printf("Could not find a project with the name \"%s\".", project);
-            out.println();
+            this.console.printf("Could not find a project with the name \"%s\".", project);
+            this.console.print("");
             return;
         }
         projectTasks.add(new Task(nextId(), description, false));
     }
 
-    private void check(String idString) {
-        setDone(idString, true);
-    }
-
-    private void uncheck(String idString) {
-        setDone(idString, false);
-    }
-
-    private void setDone(String idString, boolean done) {
-        int id = Integer.parseInt(idString);
-        for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
-            for (Task task : project.getValue()) {
-                if (task.getId() == id) {
-                    task.setDone(done);
-                    return;
-                }
-            }
-        }
-        out.printf("Could not find a task with an ID of %d.", id);
-        out.println();
-    }
-
-    private void help() {
-        out.println("Commands:");
-        out.println("  show");
-        out.println("  add project <project name>");
-        out.println("  add task <project name> <task description>");
-        out.println("  check <task ID>");
-        out.println("  uncheck <task ID>");
-        out.println();
-    }
-
     private void error(String command) {
-        out.printf("I don't know what the command \"%s\" is.", command);
-        out.println();
+        this.console.printf("I don't know what the command \"%s\" is.", command);
+        this.console.print("");
     }
 
     private long nextId() {
