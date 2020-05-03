@@ -42,7 +42,7 @@ public final class ApplicationTest {
             return;
         }
 
-        Thread.sleep(1000);
+//        Thread.sleep(5000);
         if (!stillRunning()) {
             return;
         }
@@ -52,6 +52,33 @@ public final class ApplicationTest {
     }
 
     @Test(timeout = 1000) public void
+    remove_task() throws IOException {
+        execute("show");
+
+        execute("add project secrets");
+        execute("add task secrets Eat more donuts.");
+        execute("add task secrets Destroy all humans.");
+
+        execute("show");
+        readLines(
+                "secrets",
+                "    [ ] 3: Eat more donuts.",
+                "    [ ] 4: Destroy all humans.",
+                ""
+        );
+
+        execute("delete 3");
+
+        execute("show");
+        readLines(
+                "secrets",
+                "    [ ] 4: Destroy all humans.",
+                ""
+        );
+        execute("quit");
+    }
+
+    @Test(timeout = 2000) public void
     it_works() throws IOException {
         execute("show");
 
@@ -61,10 +88,10 @@ public final class ApplicationTest {
 
         execute("show");
         readLines(
-            "secrets",
-            "    [ ] 1: Eat more donuts.",
-            "    [ ] 2: Destroy all humans.",
-            ""
+                "secrets",
+                "    [ ] 5: Eat more donuts.",
+                "    [ ] 6: Destroy all humans.",
+                ""
         );
 
         execute("add project training");
@@ -74,30 +101,49 @@ public final class ApplicationTest {
         execute("add task training Primitive Obsession");
         execute("add task training Outside-In TDD");
         execute("add task training Interaction-Driven Design");
-
-        execute("check 1");
-        execute("check 3");
         execute("check 5");
-        execute("check 6");
+        execute("check 7");
+        execute("check 8");
+        execute("check 10");
 
         execute("show");
         readLines(
                 "secrets",
-                "    [x] 1: Eat more donuts.",
-                "    [ ] 2: Destroy all humans.",
+                "    [x] 5: Eat more donuts.",
+                "    [ ] 6: Destroy all humans.",
                 "",
                 "training",
-                "    [x] 3: Four Elements of Simple Design",
-                "    [ ] 4: SOLID",
-                "    [x] 5: Coupling and Cohesion",
-                "    [x] 6: Primitive Obsession",
-                "    [ ] 7: Outside-In TDD",
-                "    [ ] 8: Interaction-Driven Design",
+                "    [x] 7: Four Elements of Simple Design",
+                "    [x] 8: SOLID",
+                "    [ ] 9: Coupling and Cohesion",
+                "    [x] 10: Primitive Obsession",
+                "    [ ] 11: Outside-In TDD",
+                "    [ ] 12: Interaction-Driven Design",
                 ""
         );
 
         execute("quit");
     }
+
+    @Test(timeout = 1000) public void
+    add_task() throws IOException {
+        execute("show");
+
+        execute("add project secrets");
+        execute("add task secrets Eat more donuts.");
+        execute("add task secrets Destroy all humans.");
+
+        execute("show");
+        readLines(
+                "secrets",
+                "    [ ] 1: Eat more donuts.",
+                "    [ ] 2: Destroy all humans.",
+                ""
+        );
+
+        execute("quit");
+    }
+
 
     private void execute(String command) throws IOException {
         read(PROMPT);

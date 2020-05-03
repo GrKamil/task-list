@@ -14,7 +14,7 @@ import static java.lang.System.lineSeparator;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-public final class CheckingTest {
+public final class TaskAdditionTest {
     public static final String PROMPT = "> ";
     private final PipedOutputStream inStream = new PipedOutputStream();
     private final PrintWriter inWriter = new PrintWriter(inStream, true);
@@ -24,7 +24,7 @@ public final class CheckingTest {
 
     private Thread applicationThread;
 
-    public CheckingTest() throws IOException {
+    public TaskAdditionTest() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(new PipedInputStream(inStream)));
         PrintWriter out = new PrintWriter(new PipedOutputStream(outStream), true);
         TaskList taskList = new TaskList(in, out);
@@ -51,50 +51,6 @@ public final class CheckingTest {
         throw new IllegalStateException("The application is still running.");
     }
 
-    @Test public void
-    check_task() throws IOException {
-        execute("add project secrets");
-        execute("add task secrets firstSecretTask");
-        execute("show");
-        readLines(
-                "secrets",
-                "    [ ] 1: firstSecretTask",
-                ""
-        );
-
-        execute("check 1");
-        execute("show");
-        readLines(
-                "secrets",
-                "    [x] 1: firstSecretTask",
-                ""
-        );
-
-        execute("quit");
-    }
-
-    @Test public void
-    uncheck_task() throws IOException {
-        execute("add project secrets");
-        execute("add task secrets firstSecretTask");
-        execute("check 1");
-        execute("show");
-        readLines(
-                "secrets",
-                "    [x] 1: firstSecretTask",
-                ""
-        );
-
-        execute("uncheck 1");
-        execute("show");
-        readLines(
-                "secrets",
-                "    [ ] 1: firstSecretTask",
-                ""
-        );
-
-        execute("quit");
-    }
 
     private void execute(String command) throws IOException {
         read(PROMPT);

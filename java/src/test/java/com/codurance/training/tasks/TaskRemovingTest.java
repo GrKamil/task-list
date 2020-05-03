@@ -14,7 +14,7 @@ import static java.lang.System.lineSeparator;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-public final class RemovingTest {
+public final class TaskRemovingTest {
     public static final String PROMPT = "> ";
     private final PipedOutputStream inStream = new PipedOutputStream();
     private final PrintWriter inWriter = new PrintWriter(inStream, true);
@@ -24,7 +24,7 @@ public final class RemovingTest {
 
     private Thread applicationThread;
 
-    public RemovingTest() throws IOException {
+    public TaskRemovingTest() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(new PipedInputStream(inStream)));
         PrintWriter out = new PrintWriter(new PipedOutputStream(outStream), true);
         TaskList taskList = new TaskList(in, out);
@@ -51,26 +51,30 @@ public final class RemovingTest {
         throw new IllegalStateException("The application is still running.");
     }
 
-    @Test public void
-    task_removing() throws IOException {
-        execute("add project secrets");
-        execute("add task secrets firstSecretTask");
-        execute("show");
-        readLines(
-                "secrets",
-                "    [ ] 1: firstSecretTask",
-                ""
-        );
-
-        execute("delete 1");
-        execute("show");
-        readLines(
-                "secrets",
-                ""
-        );
-
-        execute("quit");
-    }
+//    @Test(timeout = 1000) public void
+//    it_works() throws IOException {
+//        execute("show");
+//
+//        execute("add project secrets");
+//        execute("add task secrets Eat more donuts.");
+//        execute("add task secrets Destroy all humans.");
+//
+//        execute("show");
+//        readLines(
+//                "secrets",
+//                "    [ ] 1: Eat more donuts.",
+//                "    [ ] 2: Destroy all humans.",
+//                ""
+//        );
+//
+//        execute("delete 1");
+//        readLines(
+//                "secrets",
+//                "    [ ] 2: Destroy all humans.",
+//                ""
+//        );
+//        execute("quit");
+//    }
 
     private void execute(String command) throws IOException {
         read(PROMPT);

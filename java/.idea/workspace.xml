@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15056dbd-ea19-497b-91a2-71c52c6bf56d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/TaskAdditionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/AdditionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/CheckingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/RemovingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/TaskRemovingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ShowTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +55,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager" selected="Application.TaskList">
@@ -66,7 +72,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdditionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <extension name="coverage">
         <pattern>
@@ -75,13 +81,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.codurance.training.tasks" />
-      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.AdditionTest" />
+      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.ApplicationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdditionTest.task_addition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RemovingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <extension name="coverage">
         <pattern>
@@ -90,29 +96,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.codurance.training.tasks" />
-      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.AdditionTest" />
-      <option name="METHOD_NAME" value="task_addition" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tasks" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.codurance.training.tasks.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.codurance.training.tasks" />
-      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.ShowTest" />
+      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.RemovingTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShowTest.show_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TaskAdditionTest.it_works" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <extension name="coverage">
         <pattern>
@@ -121,9 +111,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.codurance.training.tasks" />
-      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.ShowTest" />
-      <option name="METHOD_NAME" value="show_test" />
+      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.TaskAdditionTest" />
+      <option name="METHOD_NAME" value="it_works" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TaskRemovingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tasks" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codurance.training.tasks.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codurance.training.tasks" />
+      <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.TaskRemovingTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,10 +136,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TaskList" />
-        <item itemvalue="JUnit.AdditionTest.task_addition" />
-        <item itemvalue="JUnit.AdditionTest" />
-        <item itemvalue="JUnit.ShowTest" />
-        <item itemvalue="JUnit.ShowTest.show_test" />
+        <item itemvalue="JUnit.ApplicationTest" />
+        <item itemvalue="JUnit.TaskRemovingTest" />
+        <item itemvalue="JUnit.TaskAdditionTest.it_works" />
+        <item itemvalue="JUnit.RemovingTest" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +174,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="100" y="98" width="1720" height="882" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1588522673674">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="100" y="98" width="1720" height="882" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588522673674" />
     <state x="653" y="210" key="#com.intellij.ide.util.MemberChooser" timestamp="1588506888400">
       <screen x="0" y="23" width="1680" height="944" />
     </state>
@@ -178,42 +187,42 @@
       <screen x="0" y="23" width="1680" height="944" />
     </state>
     <state x="604" y="359" width="472" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1680.944@0.23.1680.944" timestamp="1588509137490" />
-    <state width="1874" height="287" key="GridCell.Tab.0.bottom" timestamp="1588515903917">
+    <state width="1874" height="251" key="GridCell.Tab.0.bottom" timestamp="1588523997476">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="287" key="GridCell.Tab.0.bottom/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588515903917" />
+    <state width="1874" height="251" key="GridCell.Tab.0.bottom/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523997476" />
     <state width="1638" height="101" key="GridCell.Tab.0.bottom/0.23.1680.940@0.23.1680.940" timestamp="1588499826446" />
-    <state width="1874" height="287" key="GridCell.Tab.0.center" timestamp="1588515903917">
+    <state width="1874" height="251" key="GridCell.Tab.0.center" timestamp="1588523997476">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="287" key="GridCell.Tab.0.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588515903917" />
+    <state width="1874" height="251" key="GridCell.Tab.0.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523997476" />
     <state width="1638" height="101" key="GridCell.Tab.0.center/0.23.1680.940@0.23.1680.940" timestamp="1588499826445" />
-    <state width="1874" height="287" key="GridCell.Tab.0.left" timestamp="1588515903917">
+    <state width="1874" height="251" key="GridCell.Tab.0.left" timestamp="1588523997476">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="287" key="GridCell.Tab.0.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588515903917" />
+    <state width="1874" height="251" key="GridCell.Tab.0.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523997476" />
     <state width="1638" height="101" key="GridCell.Tab.0.left/0.23.1680.940@0.23.1680.940" timestamp="1588499826444" />
-    <state width="1874" height="287" key="GridCell.Tab.0.right" timestamp="1588515903917">
+    <state width="1874" height="251" key="GridCell.Tab.0.right" timestamp="1588523997476">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="287" key="GridCell.Tab.0.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588515903917" />
+    <state width="1874" height="251" key="GridCell.Tab.0.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523997476" />
     <state width="1638" height="101" key="GridCell.Tab.0.right/0.23.1680.940@0.23.1680.940" timestamp="1588499826446" />
-    <state width="1874" height="354" key="GridCell.Tab.1.bottom" timestamp="1588512373040">
+    <state width="1874" height="429" key="GridCell.Tab.1.bottom" timestamp="1588523264502">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="354" key="GridCell.Tab.1.bottom/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588512373040" />
-    <state width="1874" height="354" key="GridCell.Tab.1.center" timestamp="1588512373040">
+    <state width="1874" height="429" key="GridCell.Tab.1.bottom/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523264502" />
+    <state width="1874" height="429" key="GridCell.Tab.1.center" timestamp="1588523264502">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="354" key="GridCell.Tab.1.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588512373040" />
-    <state width="1874" height="354" key="GridCell.Tab.1.left" timestamp="1588512373040">
+    <state width="1874" height="429" key="GridCell.Tab.1.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523264502" />
+    <state width="1874" height="429" key="GridCell.Tab.1.left" timestamp="1588523264502">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="354" key="GridCell.Tab.1.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588512373040" />
-    <state width="1874" height="354" key="GridCell.Tab.1.right" timestamp="1588512373040">
+    <state width="1874" height="429" key="GridCell.Tab.1.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523264502" />
+    <state width="1874" height="429" key="GridCell.Tab.1.right" timestamp="1588523264502">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="354" key="GridCell.Tab.1.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588512373040" />
+    <state width="1874" height="429" key="GridCell.Tab.1.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588523264502" />
     <state x="341" y="132" key="SettingsEditor" timestamp="1588505997657">
       <screen x="0" y="23" width="1680" height="944" />
     </state>
