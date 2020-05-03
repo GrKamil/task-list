@@ -54,54 +54,20 @@ public final class ApplicationTest {
         throw new IllegalStateException("The application is still running.");
     }
 
-    @Test(timeout = 2000) public void
-    it_works() throws IOException {
+    @Test(timeout = 1000)
+    public void
+    add_project() throws IOException {
         execute("show");
-
         execute("add project secrets");
-        execute("add task secrets Eat more donuts.");
-        execute("add task secrets Destroy all humans.");
-
         execute("show");
         readLines(
                 "secrets",
-                "    [ ] 8: Eat more donuts.",
-                "    [ ] 9: Destroy all humans.",
                 ""
         );
-
-        execute("add project training");
-        execute("add task training Four Elements of Simple Design");
-        execute("add task training SOLID");
-        execute("add task training Coupling and Cohesion");
-        execute("add task training Primitive Obsession");
-        execute("add task training Outside-In TDD");
-        execute("add task training Interaction-Driven Design");
-        execute("check 8");
-        execute("check 10");
-        execute("check 11");
-        execute("check 13");
-
-        execute("show");
-        readLines(
-                "secrets",
-                "    [x] 8: Eat more donuts.",
-                "    [ ] 9: Destroy all humans.",
-                "",
-                "training",
-                "    [x] 10: Four Elements of Simple Design",
-                "    [x] 11: SOLID",
-                "    [ ] 12: Coupling and Cohesion",
-                "    [x] 13: Primitive Obsession",
-                "    [ ] 14: Outside-In TDD",
-                "    [ ] 15: Interaction-Driven Design",
-                ""
-        );
-
         execute("quit");
     }
 
-    @Test(timeout = 1000)
+        @Test(timeout = 1000)
     public void
     add_task() throws IOException {
         execute("show");
@@ -197,17 +163,17 @@ public final class ApplicationTest {
         execute("show");
         readLines(
                 "secrets",
-                "    [ ] 18: Eat more donuts.",
+                "    [ ] 10: Eat more donuts.",
                 ""
         );
 
-        execute("deadline 18 2020-05-10");
+        execute("deadline 10 2020-05-10");
         execute("viewby deadline 2020-05-10");
 
-        readLines("    [ ] 18: Eat more donuts.");
+        readLines("    [ ] 10: Eat more donuts.");
 
         execute("viewby deadline 2020-05-11");
-        readLines("    [ ] 18: Eat more donuts.");
+        readLines("    [ ] 10: Eat more donuts.");
 
         execute("quit");
     }
@@ -251,10 +217,10 @@ public final class ApplicationTest {
         execute("show");
         readLines(
                 "secrets",
-                "    [ ] 16: Eat more donuts.",
+                "    [ ] 8: Eat more donuts.",
                 "",
                 "please",
-                "    [ ] 17: Do not make pain with tests.",
+                "    [ ] 9: Do not make pain with tests.",
                 ""
         );
 
