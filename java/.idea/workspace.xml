@@ -22,6 +22,8 @@
     <list default="true" id="15056dbd-ea19-497b-91a2-71c52c6bf56d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/ActionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/ActionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionDeleteTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionDeleteTask.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +55,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.ApplicationTest">
     <configuration name="TaskList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.TaskList" />
@@ -67,6 +70,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.codurance.training.tasks" />
+    </key>
+  </component>
+  <component name="RunManager">
+>>>>>>> cfffb6efefa36e16e4cdc14c47dea2e023f8f713
     <configuration name="ApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tasks" />
       <extension name="coverage">
@@ -149,7 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588493624839</updated>
       <workItem from="1588493628068" duration="5778000" />
-      <workItem from="1588502266619" duration="6751000" />
+      <workItem from="1588502266619" duration="8031000" />
     </task>
     <servers />
   </component>
@@ -190,30 +201,54 @@
       <screen x="0" y="23" width="1680" height="944" />
     </state>
     <state x="604" y="359" width="472" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1680.944@0.23.1680.944" timestamp="1588509137490" />
+<<<<<<< HEAD
     <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl" timestamp="1588524561959">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="743" y="297" width="424" height="484" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1588524561959" />
     <state width="1874" height="251" key="GridCell.Tab.0.bottom" timestamp="1588524390146">
       <screen x="0" y="0" width="1920" height="1080" />
+=======
+    <state width="1638" height="101" key="GridCell.Tab.0.bottom" timestamp="1588524317013">
+      <screen x="0" y="23" width="1680" height="944" />
+>>>>>>> cfffb6efefa36e16e4cdc14c47dea2e023f8f713
     </state>
     <state width="1874" height="251" key="GridCell.Tab.0.bottom/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588524390146" />
     <state width="1638" height="101" key="GridCell.Tab.0.bottom/0.23.1680.940@0.23.1680.940" timestamp="1588499826446" />
+<<<<<<< HEAD
     <state width="1874" height="251" key="GridCell.Tab.0.center" timestamp="1588524390146">
       <screen x="0" y="0" width="1920" height="1080" />
+=======
+    <state width="1638" height="101" key="GridCell.Tab.0.bottom/0.23.1680.944@0.23.1680.944" timestamp="1588524317013" />
+    <state width="1638" height="101" key="GridCell.Tab.0.center" timestamp="1588524317012">
+      <screen x="0" y="23" width="1680" height="944" />
+>>>>>>> cfffb6efefa36e16e4cdc14c47dea2e023f8f713
     </state>
     <state width="1874" height="251" key="GridCell.Tab.0.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588524390146" />
     <state width="1638" height="101" key="GridCell.Tab.0.center/0.23.1680.940@0.23.1680.940" timestamp="1588499826445" />
+<<<<<<< HEAD
     <state width="1874" height="251" key="GridCell.Tab.0.left" timestamp="1588524390146">
       <screen x="0" y="0" width="1920" height="1080" />
+=======
+    <state width="1638" height="101" key="GridCell.Tab.0.center/0.23.1680.944@0.23.1680.944" timestamp="1588524317012" />
+    <state width="1638" height="101" key="GridCell.Tab.0.left" timestamp="1588524317012">
+      <screen x="0" y="23" width="1680" height="944" />
+>>>>>>> cfffb6efefa36e16e4cdc14c47dea2e023f8f713
     </state>
     <state width="1874" height="251" key="GridCell.Tab.0.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588524390146" />
     <state width="1638" height="101" key="GridCell.Tab.0.left/0.23.1680.940@0.23.1680.940" timestamp="1588499826444" />
+<<<<<<< HEAD
     <state width="1874" height="251" key="GridCell.Tab.0.right" timestamp="1588524390146">
       <screen x="0" y="0" width="1920" height="1080" />
+=======
+    <state width="1638" height="101" key="GridCell.Tab.0.left/0.23.1680.944@0.23.1680.944" timestamp="1588524317012" />
+    <state width="1638" height="101" key="GridCell.Tab.0.right" timestamp="1588524317013">
+      <screen x="0" y="23" width="1680" height="944" />
+>>>>>>> cfffb6efefa36e16e4cdc14c47dea2e023f8f713
     </state>
     <state width="1874" height="251" key="GridCell.Tab.0.right/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588524390146" />
     <state width="1638" height="101" key="GridCell.Tab.0.right/0.23.1680.940@0.23.1680.940" timestamp="1588499826446" />
+<<<<<<< HEAD
     <state width="1874" height="429" key="GridCell.Tab.1.bottom" timestamp="1588524390139">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -224,6 +259,11 @@
     <state width="1874" height="429" key="GridCell.Tab.1.center/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588524390138" />
     <state width="1874" height="429" key="GridCell.Tab.1.left" timestamp="1588524390138">
       <screen x="0" y="0" width="1920" height="1080" />
+=======
+    <state width="1638" height="101" key="GridCell.Tab.0.right/0.23.1680.944@0.23.1680.944" timestamp="1588524317013" />
+    <state x="341" y="132" key="SettingsEditor" timestamp="1588505997657">
+      <screen x="0" y="23" width="1680" height="944" />
+>>>>>>> cfffb6efefa36e16e4cdc14c47dea2e023f8f713
     </state>
     <state width="1874" height="429" key="GridCell.Tab.1.left/0.1080.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1588524390138" />
     <state width="1874" height="429" key="GridCell.Tab.1.right" timestamp="1588524390138">
