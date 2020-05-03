@@ -1,28 +1,21 @@
 package com.codurance.training.tasks.actions;
 
-import com.codurance.training.tasks.Console;
+import com.codurance.training.tasks.CommandContext;
+import com.codurance.training.tasks.Project;
 import com.codurance.training.tasks.Task;
-
-import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ActionShow extends Action {
-    private final Map<String, List<Task>> tasks;
-
-    public ActionShow(Map<String, List<Task>> tasks, Console console) {
-        super(console);
-        this.tasks = tasks;
-    }
-
     @Override
-    public void execute() {
-        for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
-            this.console.print(project.getKey());
-            for (Task task : project.getValue()) {
-                this.console.printf("    [%c] %d: %s%n", (task.isDone() ? 'x' : ' '), task.getId(), task.getDescription());
+    public void execute(CommandContext ctx) {
+        for (Map.Entry<String, Project> project : ctx.getProjects().entrySet()) {
+            ctx.getConsole().print(project.getValue().getName());
+
+            for (Task task : project.getValue().getAllTasks()) {
+                ctx.getConsole().printf("    [%c] %d: %s%n", (task.isDone() ? 'x' : ' '), task.getId(), task.getDescription());
             }
-            this.console.print("");
+
+            ctx.getConsole().print("");
         }
     }
 }

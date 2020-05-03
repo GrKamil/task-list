@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15056dbd-ea19-497b-91a2-71c52c6bf56d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/actions/ActionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/exceptions/QuitException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
     <configuration name="ApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -84,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588493624839</updated>
       <workItem from="1588493628068" duration="5778000" />
+      <workItem from="1588502266619" duration="6751000" />
     </task>
     <servers />
   </component>
@@ -103,10 +107,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="653" y="209" key="#com.intellij.ide.util.MemberChooser" timestamp="1588501822464">
-      <screen x="0" y="23" width="1680" height="940" />
+    <state x="653" y="210" key="#com.intellij.ide.util.MemberChooser" timestamp="1588506888400">
+      <screen x="0" y="23" width="1680" height="944" />
     </state>
     <state x="653" y="209" key="#com.intellij.ide.util.MemberChooser/0.23.1680.940@0.23.1680.940" timestamp="1588501822464" />
+    <state x="653" y="210" key="#com.intellij.ide.util.MemberChooser/0.23.1680.944@0.23.1680.944" timestamp="1588506888400" />
+    <state x="604" y="359" width="472" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588509137490">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="604" y="359" width="472" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1680.944@0.23.1680.944" timestamp="1588509137490" />
     <state width="1638" height="101" key="GridCell.Tab.0.bottom" timestamp="1588499826446">
       <screen x="0" y="23" width="1680" height="940" />
     </state>
@@ -123,6 +132,14 @@
       <screen x="0" y="23" width="1680" height="940" />
     </state>
     <state width="1638" height="101" key="GridCell.Tab.0.right/0.23.1680.940@0.23.1680.940" timestamp="1588499826446" />
+    <state x="341" y="132" key="SettingsEditor" timestamp="1588505997657">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="341" y="132" key="SettingsEditor/0.23.1680.944@0.23.1680.944" timestamp="1588505997657" />
+    <state x="567" y="227" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1588503906202">
+      <screen x="0" y="23" width="1680" height="944" />
+    </state>
+    <state x="567" y="227" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.23.1680.944@0.23.1680.944" timestamp="1588503906202" />
     <state x="498" y="250" width="837" height="486" key="find.popup" timestamp="1588496970869">
       <screen x="0" y="23" width="1680" height="940" />
     </state>

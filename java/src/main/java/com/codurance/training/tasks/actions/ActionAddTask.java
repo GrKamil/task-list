@@ -1,35 +1,30 @@
 package com.codurance.training.tasks.actions;
 
-import com.codurance.training.tasks.Console;
+import com.codurance.training.tasks.CommandContext;
+import com.codurance.training.tasks.Project;
 import com.codurance.training.tasks.Task;
-
-import java.util.List;
-import java.util.Map;
+import com.codurance.training.tasks.TaskRepository;
 
 public class ActionAddTask extends Action {
-    private final Map<String, List<Task>> tasks;
-    private String project;
-    private String description;
-    private final long id;
+    private final String projectName;
+    private final String description;
 
-    public ActionAddTask(Map<String, List<Task>> tasks, String description, String project, long id, Console console) {
-        super(console);
-        this.tasks = tasks;
-        this.project = project;
+    public ActionAddTask(String projectName, String description) {
+        this.projectName = projectName;
         this.description = description;
-        this.id = id;
     }
 
     @Override
-    public void execute() {
-        List<Task> projectTasks = tasks.get(project);
+    public void execute(CommandContext ctx) {
+        Project project = ctx.getProjects().get(this.projectName);
 
-        if (projectTasks == null) {
-            this.console.printf("Could not find a project with the name \"%s\".", project);
-            this.console.print("");
+        if (project == null) {
+            ctx.getConsole().printf("Could not find a project with the name \"%s\".", project);
+            ctx.getConsole().print("");
             return;
         }
 
-        projectTasks.add(new Task(this.id, this.description, false));
+        Task task = new Task(description, false);
+        project.addTask(task);
     }
 }
