@@ -9,17 +9,16 @@ import java.util.Map;
 
 public class ActionAddProject extends Action {
     private final Map<String, List<Task>> tasks;
+    private String name;
 
-    public ActionAddProject(Map<String, List<Task>> tasks, Console console) {
+    public ActionAddProject(Map<String, List<Task>> tasks, Console console, String name) {
         super(console);
         this.tasks = tasks;
+        this.name = name;
     }
 
     @Override
     public void execute() {
-//        String[] subcommandRest = commandLine.split(" ", 2);
-//        String subcommand = subcommandRest[0];
-
-        this.tasks.put("", new ArrayList<Task>());
+        this.tasks.put(this.name, new ArrayList<Task>());
     }
 }

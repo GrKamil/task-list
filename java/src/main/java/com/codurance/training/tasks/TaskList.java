@@ -1,9 +1,6 @@
 package com.codurance.training.tasks;
 
-import com.codurance.training.tasks.actions.ActionCheck;
-import com.codurance.training.tasks.actions.ActionHelp;
-import com.codurance.training.tasks.actions.ActionShow;
-import com.codurance.training.tasks.actions.ActionUncheck;
+import com.codurance.training.tasks.actions.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -75,25 +72,11 @@ public final class TaskList implements Runnable {
         String[] subcommandRest = commandLine.split(" ", 2);
         String subcommand = subcommandRest[0];
         if (subcommand.equals("project")) {
-            addProject(subcommandRest[1]);
+            new ActionAddProject(this.tasks, this.console, subcommandRest[1]).execute();
         } else if (subcommand.equals("task")) {
             String[] projectTask = subcommandRest[1].split(" ", 2);
-            addTask(projectTask[0], projectTask[1]);
+            new ActionAddTask(this.tasks, projectTask[1], projectTask[0], this.nextId(), this.console).execute();
         }
-    }
-
-    private void addProject(String name) {
-        tasks.put(name, new ArrayList<Task>());
-    }
-
-    private void addTask(String project, String description) {
-        List<Task> projectTasks = tasks.get(project);
-        if (projectTasks == null) {
-            this.console.printf("Could not find a project with the name \"%s\".", project);
-            this.console.print("");
-            return;
-        }
-        projectTasks.add(new Task(nextId(), description, false));
     }
 
     private void error(String command) {
