@@ -60,22 +60,17 @@ public final class ApplicationTest {
         execute("show");
         execute("add project secrets");
         execute("show");
-        readLines(
-                "secrets",
-                ""
-        );
+        readLines("secrets", "");
         execute("quit");
     }
 
-        @Test(timeout = 1000)
+    @Test(timeout = 1000)
     public void
     add_task() throws IOException {
         execute("show");
-
         execute("add project secrets");
         execute("add task secrets Eat more donuts.");
         execute("add task secrets Destroy all humans.");
-
         execute("show");
         readLines(
                 "secrets",
@@ -83,18 +78,15 @@ public final class ApplicationTest {
                 "    [ ] 3: Destroy all humans.",
                 ""
         );
-
         execute("quit");
     }
 
     @Test(timeout = 1000) public void
     remove_task() throws IOException {
         execute("show");
-
         execute("add project secrets");
         execute("add task secrets Eat more donuts.");
         execute("add task secrets Destroy all humans.");
-
         execute("show");
         readLines(
                 "secrets",
@@ -102,9 +94,7 @@ public final class ApplicationTest {
                 "    [ ] 7: Destroy all humans.",
                 ""
         );
-
         execute("delete 7");
-
         execute("show");
         readLines(
                 "secrets",
@@ -116,7 +106,7 @@ public final class ApplicationTest {
 
     @Test(timeout = 1000)
     public void
-    check_uncheck_task() throws IOException {
+    check_task() throws IOException {
         execute("show");
 
         execute("add project secrets");
@@ -154,26 +144,62 @@ public final class ApplicationTest {
 
     @Test(timeout = 1000)
     public void
-    deadline_and_viewby_deadline() throws IOException {
+    uncheck_task() throws IOException {
         execute("show");
 
+        execute("add project secrets");
+        execute("add task secrets Eat more donuts.");
+        execute("add task secrets Destroy all humans.");
+
+        execute("show");
+        readLines(
+                "secrets",
+                "    [ ] 10: Eat more donuts.",
+                "    [ ] 11: Destroy all humans.",
+                ""
+        );
+
+        execute("check 11");
+        execute("show");
+        readLines(
+                "secrets",
+                "    [ ] 10: Eat more donuts.",
+                "    [x] 11: Destroy all humans.",
+                ""
+        );
+
+        execute("uncheck 11");
+        execute("show");
+        readLines(
+                "secrets",
+                "    [ ] 10: Eat more donuts.",
+                "    [ ] 11: Destroy all humans.",
+                ""
+        );
+
+        execute("quit");
+    }
+
+    @Test(timeout = 1000)
+    public void
+    deadline_and_viewby_deadline() throws IOException {
+        execute("show");
         execute("add project secrets");
         execute("add task secrets Eat more donuts.");
 
         execute("show");
         readLines(
                 "secrets",
-                "    [ ] 10: Eat more donuts.",
+                "    [ ] 12: Eat more donuts.",
                 ""
         );
 
-        execute("deadline 10 2020-05-10");
+        execute("deadline 12 2020-05-10");
         execute("viewby deadline 2020-05-10");
-
-        readLines("    [ ] 10: Eat more donuts.");
+        readLines("    [ ] 12: Eat more donuts.");
 
         execute("viewby deadline 2020-05-11");
-        readLines("    [ ] 10: Eat more donuts.");
+        readLines("    [ ] 12: Eat more donuts.");
 
         execute("quit");
     }
