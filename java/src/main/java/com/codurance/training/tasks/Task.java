@@ -5,8 +5,8 @@ public final class Task {
     private final String description;
     private boolean done;
 
-    public Task(long id, String description, boolean done) {
-        this.id = id;
+    public Task(String description, boolean done) {
+        this.id = TaskRepository.getInstance().getNextId();
         this.description = description;
         this.done = done;
     }

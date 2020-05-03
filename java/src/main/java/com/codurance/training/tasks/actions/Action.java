@@ -1,13 +1,8 @@
 package com.codurance.training.tasks.actions;
 
+import com.codurance.training.tasks.CommandContext;
 import com.codurance.training.tasks.Console;
 
 public abstract class Action {
-    protected final Console console;
-
-    public Action(Console console) {
-        this.console = console;
-    }
-
-    abstract public void execute();
+    abstract public void execute(CommandContext ctx);
 }

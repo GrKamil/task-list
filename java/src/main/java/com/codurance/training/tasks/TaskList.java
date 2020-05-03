@@ -14,7 +14,7 @@ import java.util.Map;
 public final class TaskList implements Runnable {
     private static final String QUIT = "quit";
 
-    private final Map<String, List<Task>> tasks = new LinkedHashMap<>();
+    private final Map<String, Project> tasks = new LinkedHashMap<>();
     Console console;
 
     private long lastId = 0;
@@ -34,48 +34,43 @@ public final class TaskList implements Runnable {
         while (true) {
             this.console.printCommandStart();
             String command = this.console.readCommand();
+            CommandContext ctx = new CommandContext(this.console, this.tasks, command);
 
-            if (command.equals(QUIT)) {
+            String[] commandRest = command.split(" ", 2);
+            String commandName = commandRest[0];
+
+            if (commandName.equals(QUIT)) {
                 break;
             }
 
-            execute(command);
-        }
-    }
+            switch (commandName) {
+                case "show":
+                    new ActionShow().execute(ctx);
+                    break;
+                case "add":
+                    String[] subcommandRest = commandRest[1].split(" ", 2);
+                    String subcommand = subcommandRest[0];
 
-    private void execute(String commandLine) {
-        String[] commandRest = commandLine.split(" ", 2);
-        String command = commandRest[0];
-        switch (command) {
-            case "show":
-                new ActionShow(this.tasks, this.console).execute();
-                break;
-            case "add":
-                add(commandRest[1]);
-                break;
-            case "check":
-                new ActionCheck(this.tasks, this.console, commandRest[1]).execute();
-                break;
-            case "uncheck":
-                new ActionUncheck(this.tasks, this.console, commandRest[1]).execute();
-                break;
-            case "help":
-                new ActionHelp(this.console).execute();
-                break;
-            default:
-                error(command);
-                break;
-        }
-    }
-
-    private void add(String commandLine) {
-        String[] subcommandRest = commandLine.split(" ", 2);
-        String subcommand = subcommandRest[0];
-        if (subcommand.equals("project")) {
-            new ActionAddProject(this.tasks, this.console, subcommandRest[1]).execute();
-        } else if (subcommand.equals("task")) {
-            String[] projectTask = subcommandRest[1].split(" ", 2);
-            new ActionAddTask(this.tasks, projectTask[1], projectTask[0], this.nextId(), this.console).execute();
+                    if (subcommand.equals("project")) {
+                        new ActionAddProject(subcommandRest[1]).execute(ctx);
+                    } else if (subcommand.equals("task")) {
+                        String[] projectTask = subcommandRest[1].split(" ", 2);
+                        new ActionAddTask(projectTask[0], projectTask[1]).execute(ctx);
+                    }
+                    break;
+                case "check":
+                    new ActionCheck(Long.parseLong(commandRest[1])).execute(ctx);
+                    break;
+                case "uncheck":
+                    new ActionUncheck(Long.parseLong(commandRest[1])).execute(ctx);
+                    break;
+                case "help":
+                    new ActionHelp().execute(ctx);
+                    break;
+                default:
+                    error(command);
+                    break;
+            }
         }
     }
 

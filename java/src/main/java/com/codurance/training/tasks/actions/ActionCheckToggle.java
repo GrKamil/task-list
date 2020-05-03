@@ -1,24 +1,23 @@
 package com.codurance.training.tasks.actions;
 
+import com.codurance.training.tasks.CommandContext;
 import com.codurance.training.tasks.Console;
+import com.codurance.training.tasks.Project;
 import com.codurance.training.tasks.Task;
 
 import java.util.List;
 import java.util.Map;
 
 public abstract class ActionCheckToggle extends Action {
-    private final Map<String, List<Task>> tasks;
-    private int id;
+    private final long id;
 
-    public ActionCheckToggle(Map<String, List<Task>> tasks,Console console, String id) {
-        super(console);
-        this.id = Integer.parseInt(id);
-        this.tasks = tasks;
+    public ActionCheckToggle(long id) {
+        this.id = id;
     }
 
-    protected void setDone(boolean done) {
-        for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
-            for (Task task : project.getValue()) {
+    protected void setDone(CommandContext ctx, boolean done) {
+        for (Map.Entry<String, Project> project : ctx.getProjects().entrySet()) {
+            for (Task task : project.getValue().getAllTasks()) {
                 if (task.getId() == this.id) {
                     task.setDone(done);
                     return;
@@ -26,7 +25,7 @@ public abstract class ActionCheckToggle extends Action {
             }
         }
 
-        this.console.printf("Could not find a task with an ID of %d.", id);
-        this.console.print("");
+        ctx.getConsole().printf("Could not find a task with an ID of %d.", id);
+        ctx.getConsole().print("");
     }
 }
