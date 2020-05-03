@@ -12,6 +12,11 @@ public class ActionHelp extends Action {
         ctx.getConsole().print("  add task <project name> <task description>");
         ctx.getConsole().print("  check <task ID>");
         ctx.getConsole().print("  uncheck <task ID>");
+        ctx.getConsole().print("  deadline <task ID> <date>");
+        ctx.getConsole().print("  delete <task ID>");
+        ctx.getConsole().print("  viewby date <date>");
+        ctx.getConsole().print("  viewby deadline <date>");
+        ctx.getConsole().print("  viewby project <project name>");
         ctx.getConsole().print("");
     }
 }
